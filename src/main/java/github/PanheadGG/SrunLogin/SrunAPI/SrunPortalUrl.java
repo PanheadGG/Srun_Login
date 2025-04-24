@@ -3,10 +3,11 @@ package github.PanheadGG.SrunLogin.SrunAPI;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
+import static github.PanheadGG.SrunLogin.Main.GLOBAL_DOMAIN_DOMAIN;
 import static github.PanheadGG.SrunLogin.SrunAPI.Srun.*;
 
 public class SrunPortalUrl {
-    private final String domain = "http://210.43.112.9/cgi-bin/srun_portal";
+    private final String domain = "http://210.43.112.9";
     private String username;
     private String password;
     private String hmd5;
@@ -32,8 +33,8 @@ public class SrunPortalUrl {
     }
     public String toString() {
         try {
-            return String.format("%s?callback=function&action=login&username=%s&password=%s&ac_id=5&ip=%s&chksum=%s&info=%s&n=200&type=1&os=Windows+10&name=Windows&double_stack=0&_=%d",
-                    domain,
+            return String.format("%s/cgi-bin/srun_portal?callback=function&action=login&username=%s&password=%s&ac_id=5&ip=%s&chksum=%s&info=%s&n=200&type=1&os=Windows+10&name=Windows&double_stack=0&_=%d",
+                    GLOBAL_DOMAIN_DOMAIN,
                     URLEncoder.encode(username,"UTF-8"),
                     URLEncoder.encode("{MD5}"+hmd5,"UTF-8"),
                     URLEncoder.encode(ip,"UTF-8"),
