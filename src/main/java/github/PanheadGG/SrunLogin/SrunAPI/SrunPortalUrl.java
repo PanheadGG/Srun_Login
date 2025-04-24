@@ -7,7 +7,6 @@ import static github.PanheadGG.SrunLogin.Main.GLOBAL_DOMAIN_DOMAIN;
 import static github.PanheadGG.SrunLogin.SrunAPI.Srun.*;
 
 public class SrunPortalUrl {
-    private final String domain = "http://210.43.112.9";
     private String username;
     private String password;
     private String hmd5;
